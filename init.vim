@@ -46,11 +46,11 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_rust_src_path = '~/Documents/Rust_Source/src/'
 
 function! NumToggle()
-	if(&relativenumber == 1)
-		set norelativenumber
-	else
-		set relativenumber
-	endif
+    if(&relativenumber == 1)
+        set norelativenumber
+    else
+        set relativenumber
+    endif
 endfunc
 
 
