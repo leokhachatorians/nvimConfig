@@ -61,27 +61,27 @@ noremap <C-n> :call NumToggle()<cr>
 tnoremap <F12> <C-\><C-n> 
 set switchbuf+=useopen
 function! TermEnter()
-	let bufcount = bufnr("$")
-	let currbufnr = 1
-	let nummatches = 0
-	let firstmatchingbufnr = 0
-	while currbufnr <= bufcount
-		if(bufexists(currbufnr))
-			let currbufname = bufname(currbufnr)
-			if(match(currbufname, "term://") > -1)
-				echo currbufnr . ": ". bufname(currbufnr)
-				let nummatches += 1
-				let firstmatchingbufnr = currbufnr
-				break
-			endif
-		endif
-	let currbufnr = currbufnr + 1
-	endwhile
-	if(nummatches >= 1)
-		execute ":sbuffer ". firstmatchingbufnr
-		execute ":b#"
-	else
-		execute ":terminal"
-	endif
+    let bufcount = bufnr("$")
+    let currbufnr = 1
+    let nummatches = 0
+    let firstmatchingbufnr = 0
+    while currbufnr <= bufcount
+        if(bufexists(currbufnr))
+            let currbufname = bufname(currbufnr)
+            if(match(currbufname, "term://") > -1)
+                echo currbufnr . ": ". bufname(currbufnr)
+                let nummatches += 1
+                let firstmatchingbufnr = currbufnr
+                break
+            endif
+        endif
+    let currbufnr = currbufnr + 1
+    endwhile
+    if(nummatches >= 1)
+        execute ":sbuffer ". firstmatchingbufnr
+        execute ":b#"
+    else
+    execute ":terminal"
+    endif
 endfunction
 map <F12> :call TermEnter()<CR>
