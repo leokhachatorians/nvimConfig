@@ -25,7 +25,8 @@ let g:indentLine_color_term=191
 let g:indentLine_char = '|'
 
 " Folding Settings
-set foldlevel=99
+set foldlevel=1
+set foldmethod=indent
 noremap <space> za
 vnoremap <space> zf
 hi Folded ctermbg=242
@@ -33,9 +34,8 @@ hi Folded ctermbg=242
 " General
 set cursorline
 set showmatch
-set noexpandtab
 set nu
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set hlsearch
 set laststatus=2
 set splitright
