@@ -266,3 +266,5 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
  "yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+hi Pmenu ctermbg=black ctermfg=white
